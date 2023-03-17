@@ -49,11 +49,13 @@
          @foreach ($listItems as $listItem)
             <div style="display:flex; max-width: 500px; margin:auto; align-items:center; min-height: 75px; flex-direction:row; justify-content: center;">
              <p>Item: {{ $listItem->name }}</p>
-
+            
+             <div>
              <form method="post" action="{{ route('markComplete', $listItem->id) }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
              <button type="submit" style="margin-left: 2rem;">Mark Complete</button>
              </form>
+             </div>
             
             </div>
          @endforeach
